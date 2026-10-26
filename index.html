@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <p class="eyebrow">STUDENT PROJECT</p>
+      <h1>Smart To-Do List</h1>
+      <p class="subtitle">Plan your day, one task at a time.</p>
+    </header>
+
+    <section class="task-form" aria-label="Add a task">
+      <label for="taskInput">New task</label>
+      <div class="input-row">
+        <input id="taskInput" type="text" placeholder="What do you need to do?" maxlength="120">
+        <select id="priorityInput" aria-label="Task priority">
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+          <option value="low">Low</option>
+        </select>
+        <button id="addButton" type="button">Add task</button>
+      </div>
+      <p id="formMessage" class="message" aria-live="polite"></p>
+    </section>
+
+    <section class="summary" aria-label="Task summary">
+      <div><span id="totalCount">0</span><small>Total</small></div>
+      <div><span id="pendingCount">0</span><small>Pending</small></div>
+      <div><span id="completedCount">0</span><small>Completed</small></div>
+    </section>
+
+    <section class="list-section">
+      <div class="list-heading">
+        <h2>Your tasks</h2>
+        <label class="filter-label" for="filterSelect">Show
+          <select id="filterSelect">
+            <option value="all">All tasks</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+        </label>
+      </div>
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyMessage" class="empty-message">No tasks yet. Add your first task above!</p>
+    </section>
+
+    <footer>
+      <p>Your tasks are saved in this browser on this device.</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
